@@ -1,0 +1,15 @@
+[Unit]
+Description=ISC Configurator
+After=isc-dhcp-server.service
+Requires=isc-dhcp-server.service
+PartOf=isc-dhcp-server.service
+
+[Service]
+User=root
+WorkingDirectory=/etc/dhcp
+ExecStart=/usr/bin/start-dhcpd.sh
+Restart=on-failure
+StartLimitInterval=600
+
+[Install]
+WantedBy=multi-user.target
