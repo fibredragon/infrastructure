@@ -1,8 +1,7 @@
 [Unit]
 Description=ISC Configurator
-After=isc-dhcp-server.service
-Requires=isc-dhcp-server.service
-PartOf=isc-dhcp-server.service
+Wants=network.target
+After=network.target
 
 [Service]
 User=root
